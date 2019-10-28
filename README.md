@@ -57,11 +57,13 @@ A flag character is used between the percent character and conversion character.
 ### Length Modifiers ###
 A length modifier is used before the conversion character.
 
-| Length     |                Standard Outputs                 |
-| Modifier   |                                                 |
-| ---------- | ----------------------------------------------- |
-|      l     | applies to conversion characters: d and i only  |
-|      h     | applies to conversion characters: u, o, x and X |
+| Length     |                                     Standard Outputs                                    |
+| Modifier   |                                                                                         |
+| ---------- | --------------------------------------------------------------------------------------- |
+|      l     | deals with long integers when applied to conversion characters: d and i                 |
+|            | deals with unsigned long integers when applied to conversion characters: u, o, x and X  |
+|      h     | deals with short integers when applied to conversion characters: d and i                |
+|            | deals with unsigned short integers when applied to conversion characters: u, o, x and X |
 
 
 ## Goals ##
