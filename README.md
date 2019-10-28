@@ -4,10 +4,11 @@
 ## Overview ##
 The source code files contained here are for implementing a custom printf function called \_printf.  The \_printf function produces a formatted output of a string argument to standard output.  It's a highly flexible function that utilizes conversion specifiers to format a string.  In turn, these conversion specifiers has optional flag characters, length modifiers and a precision condition to apply more detailed format specifications.
 
-## Specifications of printf ##
+## Specifications ##
+The following tables summarizes the standard output behavior of \_printf when using conversion specifiers.
 
 ### Conversion Specifiers ###
-A conversion specifier begins with the percent character followed by a conversion character.  The following tables summarizes its standard output behavior.
+A conversion specifier begins with the percent character followed by a conversion character.
 
 | Conversion |                    Standard Outputs                        |
 | Character  |                    Strings or Character(s)                 |
@@ -37,7 +38,7 @@ A conversion specifier begins with the percent character followed by a conversio
 |      b     | a binary                                                   |
 
 ### Flag Characters ###
-A flag character is between the percent character and conversion character.  The following table summaries its standard output behavior.
+A flag character is used between the percent character and conversion character.
 
 | Flag       |                                         Standard Outputs                                        |
 | Character  |                                                                                                 |
@@ -52,6 +53,15 @@ A flag character is between the percent character and conversion character.  The
 |            | applies to conversion characters: d and i only                                                  |
 |    space   | space to indicate positive integer or negative sign                                             |
 |            | applies to conversion characters: d and i only                                                  |
+
+### Length Modifiers ###
+A length modifier is used before the conversion character.
+
+| Length     |                Standard Outputs                 |
+| Modifier   |                                                 |
+| ---------- | ----------------------------------------------- |
+|      l     | applies to conversion characters: d and i only  |
+|      h     | applies to conversion characters: u, o, x and X |
 
 
 ## Goals ##
