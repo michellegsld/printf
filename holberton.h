@@ -29,28 +29,14 @@ typedef struct
 
 void str_concat(char *v_out);
 
-/* String prototypes: */
-void simstr_func(char *c, char *v_out, char *var);	//still need to fix the 'p' case
+/*
+ * void char_func(char *v_out, char var);
+ * void string_func(char *v_out, char *var)
+ */
+void simstr_func(char *c, char *v_out, char *var);
 void per_func(char *v_out);
-void rev_func(char *v_out, char *var);			//will reverse *var into *v_out: called for 'r'
-void rot13_func(char *v_out, char *var);		//will rot13 *var into *v_out: called for 'R'
 
-/* Number prototypes: */	//would these *var be chars or were they supposed to be num?
-				//maybe within func... they are done atoi() then the num is convert.
-void hex_func(char *c, char *v_out, char *var);		//unsure about return type: called for 'x' 'X'
-void oct_func(char *v_out, char *var);			//unsure about return type and char *c: called for 'o'
-void undec_func(char *v_out, char *var);		//^: called for 'u'
-void bin_func(char *v_out, char *var);			//^^: called for 'b'
-void dec_func(char *c, char *v_out, char *var);		//unsure about return type: called for 'd' 'i'
-
-/* Flag prototypes: */		//unsure about the need of *var in any of these
-				//the *c is important ==> will be the con. specifier, decides if this works?
-				//do we need to send in another variable that accounts for field width?
-void flag_zero(char *c, char *v_out, char *var, int width);	//including width as output depends on it
-void flag_just(char *c, char *v_out, char *var, int width);	//^
-void flag_pound(char *c, char *v_out, char *var);
-void flag_plus(char *c, char *v_out, char *var);
-void flag_space(char *c, char *v_out, char *var);
+void dec_func(char *c, char *v_out, char *var);
 
 int _printf(const char *format, ...);
 
