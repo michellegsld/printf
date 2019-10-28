@@ -1,29 +1,30 @@
 #include "holberton.h"
 
 /**
- * simstr_func - function to produce output for conversion specifiers c, s & p
- * @c: conversion specifiers
- * @v_out: where output is saved to
- * @var: only matters for c, s
+ * simstr_func - Function to produce output for conversion specifiers c, s & p
+ * @c: The specific conversion specifier
+ * @v_out: Where the output is saved to
+ * @var: It's contents only matters for c, s while p needs it's address
+ *
  * Return: Nothing
  */
 void simstr_func(char *c, char *v_out, char *var)
 {
 	int i, j, k;
 	int len = 0;
-	char add = (char *)&var;
+	char *add = (char *)&var;
 
-	switch (char *c)
+	switch (*c)
 	{
 		case 'c':
-			v_out[0] = v_out[0];
+			v_out[0] = var[0];
 			v_out[1] = '\0';
 			break;
 		case 's':
-			for (i = 0; var[i] != '\0'; i++)
+			for (i = 0; add[i] != '\0'; i++)
 				len++;
-			for (j = 0; v_out[j] <= len; j++)
-				v_out[j] = var[j];
+			for (j = 0; j <= len; j++)
+				v_out[j] = add[j];
 			break;
 		case 'p':
 			for (i = 0; add[i] != '\0'; i++)
@@ -36,8 +37,9 @@ void simstr_func(char *c, char *v_out, char *var)
 }
 
 /**
- * per_func - function to produce conversion specifier %
- * @v_out: where output is saved to
+ * per_func - Function to produce conversion specifier %
+ * @v_out: Where output is saved to
+ *
  * Return: Nothing
  */
 void per_func(char *v_out)
