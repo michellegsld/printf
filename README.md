@@ -39,21 +39,19 @@ A conversion specifier begins with the percent character followed by a conversio
 ### Flag Characters ###
 A flag character is between the percent character and conversion character.  The following table summaries its standard output behavior.
 
-| Flag       |                    Standard Outputs                        |
-| Character  |                                                            |
-| ---------- | ---------------------------------------------------------- |
-|      0     | zero padding to the left                                   |
-|            | applies to any kind of conversion character                |
-|            | ignored when used with -                                   |
-|      -     | justified to the left                                      |
-|            | applies to any kind of conversion character                |
-|            | dependent upon field width                                 |
-|      #     | converts to octal or hexadecimal, therefore, dependent on  |
-|            | conversion characters: o, x and X                          |
-|      +     | positive or negative sign                                  | 
-|            | applies to conversion characters: d and i only             |
-|    space   | space to indicate positive integer or negative sign        |
-|            | applies to conversion characters: d and i only             |
+| Flag       |                                         Standard Outputs                                        |
+| Character  |                                                                                                 |
+| ---------- | ----------------------------------------------------------------------------------------------- |
+|      0     | zero padding to the left  applies to any kind of conversion character  ignored when used with - |
+|      -     | justified to the left                                                                           |
+|            | applies to any kind of conversion character                                                     |
+|            | dependent upon field width                                                                      |
+|      #     | converts to octal or hexadecimal, therefore, dependent on                                       |
+|            | conversion characters: o, x and X                                                               |
+|      +     | positive or negative sign                                                                       |
+|            | applies to conversion characters: d and i only                                                  |
+|    space   | space to indicate positive integer or negative sign                                             |
+|            | applies to conversion characters: d and i only                                                  |
 
 
 ## Goals ##
