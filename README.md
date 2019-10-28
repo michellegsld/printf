@@ -1,5 +1,5 @@
 # README for \_printf #
-![\_printf](https://imgur.com/NoAH5hw)
+![printf](https://imgur.com/YKAr973)
 
 ## Overview ##
 The source code files contained here are for implementing a custom printf function called \_printf.  The \_printf function produces a formatted output of a string argument to standard output.  It's a highly flexible function that utilizes conversion specifiers to format a string.  In turn, these conversion specifiers has optional flag characters, length modifiers and a precision condition to apply more detailed format specifications.
@@ -11,8 +11,7 @@ The following tables summarizes the standard output behavior of \_printf when us
 ### Conversion Specifiers ###
 A conversion specifier begins with the percent character followed by a conversion character.
 
-| Conversion |                    Standard Outputs                        |
-| Character  |                    Strings or Character(s)                 |
+| Character  |        Standard Output for Strings or Character(s)         |
 | ---------- | ---------------------------------------------------------- |
 |      c     | a single character                                         |
 |      s     | an entire string                                           |
@@ -22,14 +21,12 @@ A conversion specifier begins with the percent character followed by a conversio
 |      r     | an entire string in reverse                                | 
 |      R     | an entire string in ROT13                                  |
 
-| Conversion |                    Standard Outputs                        |
-| Character  |                    Signed Integers                         |
+| Character  |            Standard Output for Signed Integers             |
 | ---------- | ---------------------------------------------------------- |
 |      d     | a decimal                                                  |
 |      i     | a integer                                                  |
 
-| Conversion |                    Standard Outputs                        |
-| Character  |                    Unsigned Integers                       |
+| Character  |           Standard Output for Unsigned Integers            |
 | ---------- | ---------------------------------------------------------- |
 |      f     | a decimal that defaults to 6 digits after the period       |
 |      u     | a positive integer                                         |
