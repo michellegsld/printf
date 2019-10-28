@@ -2,7 +2,7 @@
 ![\_printf](https://imgur.com/NoAH5hw)
 
 ## Overview ##
-The source code files contained here are for implementing a custom printf function.  The printf function produces a formatted output of a string argument to standard output.  It's a highly flexible function that utilizes conversion specifiers to format a string.  In turn, these conversion specifiers has optional flag characters, length modifiers and a precision condition to apply more detailed format specifications.
+The source code files contained here are for implementing a custom printf function called \_printf.  The \_printf function produces a formatted output of a string argument to standard output.  It's a highly flexible function that utilizes conversion specifiers to format a string.  In turn, these conversion specifiers has optional flag characters, length modifiers and a precision condition to apply more detailed format specifications.
 
 ## Specifications of printf ##
 
