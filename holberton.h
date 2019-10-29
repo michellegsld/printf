@@ -19,7 +19,7 @@ typedef struct charfunc
 	char (*f)(char *);
 } charfunc;
 
-void itoa_func(char *str, int var);
+void itoa_func(char *str, long var);
 
 void str_concat(char *dest, char *str);
 
@@ -27,7 +27,7 @@ void char_func(char *v_out, char var);
 void string_func(char *v_out, char *var);
 void per_func(char *v_out);
 
-void dec_func(char *v_out, int var);
+void dec_func(char *v_out, long int var);
 
 int _printf(const char *format, ...);
 
