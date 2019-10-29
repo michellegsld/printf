@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 				break;
 		}
 		i++;
-		if (j >= 950)
+		if (j == BUFSIZE)
 		{
 			len = write_func(var_fin, len);
 			j = 0;
@@ -147,8 +147,9 @@ void set_nullbyte(char *v_fin)
 
 /**
  * write_func - Outputs a string and keeps track of a string length
- * var_fin: The string
- * len1: The length of the output
+ * @var_fin: The string
+ * @len1: The length of the output
+ *
  * Return: Always the length of var_fin
  */
 unsigned long int write_func(char *var_fin, unsigned long len1)
