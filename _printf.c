@@ -40,22 +40,13 @@ int _printf(const char *format, ...)
 					string_func(var_out, va_arg(list, char *));
 				else if (format[i] == '%')
 					per_func(var_out);
-				else if (format[i - 2] == '%')
-				{
-					var_fin[j] = format[i];
-					j++;
-					break;
-				}
 				else
 					break;
 				flag = 1;
 				break;
 			default:
-				if (format[i - 1] != '%')
-				{
-					var_fin[j] = format[i];
-					j++;
-				}
+				var_fin[j] = format[i];
+				j++;
 				break;
 		}
 		i++;
