@@ -38,18 +38,20 @@ A conversion specifier begins with the percent character followed by a conversio
 ### Flag Characters ###
 A flag character is used between the percent character and conversion character.
 
-| Flag       | Standard Output                                                                                 |
-| ---------- | ----------------------------------------------------------------------------------------------- |
-|      0     | zero padding to the left  applies to any kind of conversion character  ignored when used with - |
-|      -     | justified to the left                                                                           |
-|            | applies to any kind of conversion character                                                     |
-|            | dependent upon field width                                                                      |
-|      #     | converts to octal or hexadecimal, therefore, dependent on                                       |
-|            | conversion characters: o, x and X                                                               |
-|      +     | positive or negative sign                                                                       |
-|            | applies to conversion characters: d and i only                                                  |
-|    space   | space to indicate positive integer or negative sign                                             |
-|            | applies to conversion characters: d and i only                                                  |
+| Flag       | Standard Output                                            |
+| ---------- | ---------------------------------------------------------- |
+|      0     | 1. zero padding to the left  					   	      |
+|            | 2. applies to any kind of conversion character             |
+|            | 3. ignored when used with -                                |
+|      -     | 1. justified to the left                                   |
+|            | 2. applies to any kind of conversion character             |
+|            | 3. dependent upon field width                              |
+|      #     | 1. converts to octal or hexadecimal                        |
+|            | 2. dependent on conversion characters: o, x and X          |
+|      +     | 1. pads with a positive or negative sign                   |
+|            | 2. applies to conversion characters: d and i only          |
+|    space   | 1. space to indicate positive integer or negative sign     |
+|            | 2. applies to conversion characters: d and i only          |
 
 ### Length Modifiers ###
 A length modifier is used before the conversion character.
@@ -67,12 +69,12 @@ A length modifier is used before the conversion character.
 1. Handle the conversion specifiers: **d** and **i**  
 2. Create a man page for the function  
 3. Handle the conversion specifier: **b**  
-4. Handle the conversion specifiers: **u o x X**  
+4. Handle the conversion specifiers: **u, o, x, X**  
 5. Use local buffer of 1024 chars to call write as few times as possible  
 6. Handle the custom conversion specifier: **S**  
 7. Handle the conversion specifier: **p**  
 8. Handle the flag characters for non-custom conversion specifier: **+ space #**  
-9. Handle the length modifiers: **l h** for non-custom conversion specifiers: **d i u o x X**  
+9. Handle the length modifiers: **l, h** for non-custom conversion specifiers: **d, i, u, o, x, X**  
 10. Handle the field width for non-custom conversion specifiers  
 11. Handle the precision for non-custom conversion specifiers  
 12. Handle the flag character for non-custom conversion specifier: **0**  
