@@ -38,8 +38,21 @@ int _printf(const char *format, ...)
 					per_func(var_out);
 				else if (format[i] == 'l')
 				{
-					dec_func(var_out, va_arg(list, long));
 					i++;
+					if (format[i] == 'd' || format[i] == 'i')
+						dec_func(var_out, va_arg(list, long));
+					else
+						dec_func(var_out, va_arg(list, unsigned long));
+					flag = 1;
+					break;
+				}
+				else if (format[i] == 'h')
+				{
+					i++;
+					if (format[i] == 'd' || format[i] == 'i')
+						dec_func(var_out, va_arg(list, int));
+					else
+						dec_func(var_out, va_arg(list, unsigned int));
 					flag = 1;
 					break;
 				}
