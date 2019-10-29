@@ -30,7 +30,9 @@ int _printf(const char *format, ...)
 		{
 			case '%':
 				i++;
-				if (format[i] == 'd' || format[i] == 'i')
+				if (format[i] == '\0')
+					return (-1);
+				else if (format[i] == 'd' || format[i] == 'i')
 					dec_func(var_out, va_arg(list, int));
 				else if (format[i] == 'c')
 					char_func(var_out, va_arg(list, int));
