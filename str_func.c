@@ -7,7 +7,7 @@
  */
 void char_func(char *v_out, char var)
 {
-	v_out[0] = var[0];
+	v_out[0] = var;
 }
 
 /**
