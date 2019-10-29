@@ -7,20 +7,20 @@
 .PP
 int _printf(const char *format, ...);
 .SH DESCRIPTION
-The _printf function produces output according to conversion specifiers.  It will write to standard output.
+The _printf function produces output according to conversion specifiers and write to standard output.
 .PP
 .B Return value
 .PP
-Upon successful return, the function returns the number of characters printed excluding the null byte used to end output to strings.  If an output error occurs, return -1.
+Upon successful return, the _printf function returns the number of characters excluding the null byte used to end output to a string.  If an output error occurs, a negative value is returned.
 .PP
 .B Format of the format string
 .PP
-The format string is a character string that begins with the percent characer, % and ends with a conversion specifier.  If necessary, there are optional specifiers that could be applied to the format string.  They would go in between the % and conversion specifier.  These optional specifiers would appear in this order: flags, field width, precision and length modifier.
+The format string is a character string that begins with the percent character, % and ends with a conversion specifier.  If necessary, flags, field width, precision and length modifiers are options that could be applied to the format string.  They would go in between the % and conversion specifier.  These options would appear in the following order:
 .PP
 .B % [flags][field width][.precision][length modifier] conversion specifier
 .SH OPTIONS
 .B The flag characters 
-precedences with the percent character, % followed by zero or more of the following flags:
+are preceded with the percent character.  The following flags could be applied by itself or together %.
 .PP
 .RS
 .B 0
@@ -37,17 +37,17 @@ For o, x and X conversion specifiers, the converted value will append 0, 0x and 
 .PP
 .B +
 .PP
-For d and i conversion specifiers only.  If the converted value is positive, the plus character will be padded at the front.  If the converted value is negative, the minus character will be padded at the front.
+For d and i conversion specifiers only.  If the converted value is positive, the plus sign character will be padded at the front.  If the converted value is negative, the minus sign character will be padded at the front.
 .PP
 .B space
 .PP
-For d and i conversion specifiers only.  If the converted value is positive, it will be space padded.  If the converted value is negative, the minus charcter will be padded at the front.
+For d and i conversion specifiers only.  If the converted value is positive, it will be space padded.  If the converted value is negative, the minus sign charcter will be padded at the front.
 .PP
 .RE
 .B The field width
 .PP
 .RS
-A decimal digit string where the first digit is not a zero specifies a minimum field width.  If the field width is less than the length of the converted value, then the converted value will print as is.  If the converted value length is less than the field width, it will be padded with spaces on the left.  If the flag character, - is present, then the converted value will be padded with spaces to the right.  If the flag character, 0 is present, then the converted value will be padded with zero to the left. 
+A decimal digit string where the first digit is not a zero specifies a minimum field width.  If the field width is less than the length of the converted value, then the converted value will be converted as is.  If the converted value length is less than the field width, it will be padded with spaces on the left.  If the flag character, - is present, then the converted value will be padded with spaces to the right.  If the flag character, 0 is present, then the converted value will be padded with zeros to the left. 
 .RE
 .PP
 .B The precision
@@ -88,9 +88,13 @@ No conversion occurs.  The percent character, % will be printed.
 .PP
 A memory address of a pointer argument will be printed in hexadecimal.
 .PP
+.B b
+.PP
+An unsigned int will be converted to base 2 binary.
+.PP
 .B S
 .PP
-An entire string of characters will be printed.  The characters, \x followed by the ASCII value in hexadecimal (2 uppercase characters) will be printed for any ASCII value between 0 and 32 or 127 and above.
+An entire string of characters will be printed.  The characters, \\x followed by the ASCII value in hexadecimal (2 uppercase characters) will be printed for any ASCII value between 0 and 32 or 127 and above.
 .PP
 .B r
 .PP
@@ -98,7 +102,7 @@ An entire string of characters will be printed in reverse.
 .PP
 .B R
 .PP
-An entire string of characters will be printed in ROT13.  An alphabetic character replaces a letter with the 13th letter after it.  For example, applying ROT13 to "HELLO" will print "URYYB".
+An entire string of characters will be encoded with ROT13 where an alphabetic character replaces a letter with the 13th letter after it.  For example, applying ROT13 to "HELLO" will print "URYYB".
 .PP
 .B d, i
 .PP
@@ -106,7 +110,7 @@ An int will convert to a signed base 10 decimal.  If needed, can also convert ba
 .PP
 .B o, u, x, X
 .PP
-An unsigned int converts to the following unsigned: 
+An unsigned int will convert to the following unsigned: 
 .PP
 .RS
 base 8 octal represented by o
@@ -115,6 +119,16 @@ base 10 decimal represented by u
 .PP
 base 16 hexadecimal represented by x for lowercase or X for uppercase
 .RE
+.RE
+.SH EXAMPLE
+To print a single character:
+.PP
+.RS
+#include "holberton.h"
+.PP
+_printf("Standard output: %c\\n", 'H');
+.PP
+Standard output: H
 .RE
 .SH SEE ALSO
 .I printf(3)
