@@ -1,5 +1,5 @@
 # README for \_printf #
-![printf](https://imgur.com/YKAr973)
+![\_printf](https://i.imgur.com/0SpuyVJ.png)
 
 ## Overview ##
 The source code files contained here are for implementing a custom printf function called \_printf.  The \_printf function produces a formatted output of a string argument to standard output.  It's a highly flexible function that utilizes conversion specifiers to format a string.  In turn, these conversion specifiers has optional flag characters, length modifiers and a precision condition to apply more detailed format specifications.
@@ -11,7 +11,7 @@ The following tables summarizes the standard output behavior of \_printf when us
 ### Conversion Specifiers ###
 A conversion specifier begins with the percent character followed by a conversion character.
 
-| Character  |        Standard Output for Strings or Character(s)         |
+| Specifier  | Standard Output for Strings or Character(s)                |
 | ---------- | ---------------------------------------------------------- |
 |      c     | a single character                                         |
 |      s     | an entire string                                           |
@@ -21,12 +21,12 @@ A conversion specifier begins with the percent character followed by a conversio
 |      r     | an entire string in reverse                                | 
 |      R     | an entire string in ROT13                                  |
 
-| Character  |            Standard Output for Signed Integers             |
+| Specifier  | Standard Output for Signed Integers                        |
 | ---------- | ---------------------------------------------------------- |
 |      d     | a decimal                                                  |
 |      i     | a integer                                                  |
 
-| Character  |           Standard Output for Unsigned Integers            |
+| Specifier  | Standard Output for Unsigned Integers                      |
 | ---------- | ---------------------------------------------------------- |
 |      f     | a decimal that defaults to 6 digits after the period       |
 |      u     | a positive integer                                         |
@@ -38,8 +38,7 @@ A conversion specifier begins with the percent character followed by a conversio
 ### Flag Characters ###
 A flag character is used between the percent character and conversion character.
 
-| Flag       |                                         Standard Outputs                                        |
-| Character  |                                                                                                 |
+| Flag       | Standard Output                                                                                 |
 | ---------- | ----------------------------------------------------------------------------------------------- |
 |      0     | zero padding to the left  applies to any kind of conversion character  ignored when used with - |
 |      -     | justified to the left                                                                           |
@@ -55,8 +54,7 @@ A flag character is used between the percent character and conversion character.
 ### Length Modifiers ###
 A length modifier is used before the conversion character.
 
-| Length     |                                     Standard Outputs                                    |
-| Modifier   |                                                                                         |
+| Modifier   | Standard Output                                                                         |
 | ---------- | --------------------------------------------------------------------------------------- |
 |      l     | deals with long integers when applied to conversion characters: d and i                 |
 |            | deals with unsigned long integers when applied to conversion characters: u, o, x and X  |
@@ -91,7 +89,7 @@ A length modifier is used before the conversion character.
 3. Compile: 
 ```shell
 	gcc -Wall -Wextra -Werror -pedantic *.c 
-	gcc -Wno-format
+	gcc -Wno-format *.c
 ```
 4. Standard libraries: 
 ```C
