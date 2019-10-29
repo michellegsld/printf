@@ -2,7 +2,7 @@
 
 void set_nullbyte(char *var);
 
-int find_len(char *v_fin);
+unsigned long write_func(char *v_fin, unsigned long len);
 
 /**
  * _printf - Produces an output according to format
@@ -13,7 +13,8 @@ int find_len(char *v_fin);
 int _printf(const char *format, ...)
 {	char var_fin[BUFSIZE];
 	char var_out[BUFSIZE];
-	int i = 0, j = 0, len = 0, flag = 0;
+	int i = 0, j = 0, flag = 0;
+	unsigned long len = 0;
 	va_list list;
 
 	set_nullbyte(var_fin);
@@ -50,9 +51,13 @@ int _printf(const char *format, ...)
 				break;
 		}
 		i++;
+		if (j >= 950)
+		{
+			len = write_func(var_fin, len);
+			j = 0;
+		}
 		if (flag == 1)
 		{
-			j++;
 			str_concat(var_fin, var_out);
 			for (j = 0; var_fin[j] != '\0'; j++)
 				;
@@ -61,11 +66,8 @@ int _printf(const char *format, ...)
 		}
 	}
 
-	len = find_len(var_fin);
-	write(1, var_fin, len);
-
 	va_end(list);
-	return (len);
+	return (write_func(var_fin, len));
 }
 
 /*
@@ -144,17 +146,21 @@ void set_nullbyte(char *v_fin)
 }
 
 /**
- * find_len - Finds the length of a string
- * @v_fin: The string's length to be found
- *
- * Return: Always the length of the string
+ * write_func - Outputs a string and keeps track of a string length
+ * var_fin: The string
+ * len1: The length of the output
+ * Return: Always the length of var_fin
  */
-int find_len(char *v_fin)
+unsigned long int write_func(char *var_fin, unsigned long len1)
 {
-	int len = 0;
+	unsigned long len2 = 0;
 
-	while (v_fin[len] != '\0')
-		len++;
+	while (var_fin[len2] != '\0')
+		len2++;
 
-	return (len);
+	write(1, var_fin, len2);
+	set_nullbyte(var_fin);
+
+	len2 += len1;
+	return (len2);
 }
