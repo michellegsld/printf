@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 				break;
 		}
 		i++;
-		if (j == BUFSIZE)
+		if (j == BUFSIZE && (flag == 1 || format[i] != '\0'))
 		{
 			len = write_func(var_fin, len);
 			j = 0;
