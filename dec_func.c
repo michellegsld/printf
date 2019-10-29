@@ -5,7 +5,7 @@
  * @v_out: where output is saved to
  * @var: variable sent into printf
  */
-void dec_func(char *v_out, int var)
+void dec_func(char *v_out, long int var)
 {
 	int i;
 	char num[BUFSIZE];
