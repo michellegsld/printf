@@ -8,7 +8,7 @@
  */
 void bin_func(unsigned int num)
 {
-	unsigned int mask = 3000;
+	unsigned int mask = 1;
 /*	unsigned int i;
 	
 	char var[BUFSIZE];
@@ -16,14 +16,15 @@ void bin_func(unsigned int num)
 	for (i = 0; i < BUFSIZE; i++)
 		var[i] = '\0';
 */
-	while (mask > num)
+	while (mask < num)
 	{
-		mask = mask >> 1;
+		mask <<= 1;
 		if ((num & mask) == 0)	
 			_putchar('0');
 		else
 			_putchar('1');
 	}
+	_putchar('\n');
 /*	itoa_func(var, mask);
 	for (i = 0; var[i] != '\0'; i++)
 		v_out[i] = var[i]; */
