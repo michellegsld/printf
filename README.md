@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-#Contributors:#
-Michelle Giraldo
-=======
 # README for \_printf #
 ![\_printf](https://i.imgur.com/0SpuyVJ.png)
 
@@ -121,5 +117,4 @@ A length modifier is used before the conversion character.
 
 ## Contributors ##
 Michelle Giraldo  
->>>>>>> 2a344ec... 7. Pushing,
 Jennifer Tang
